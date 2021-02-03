@@ -1,19 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Covid Cenet(R)</title>
-    </head>
-    <body>
-        <header>
-            <h1>Welcome to the Covid Center Website!</h1>
-        </header>
-        <section>
-            <h2>Please go Ahead and fill out the form: </h2>
-            <article>
-                this form will go here
-            </article>
-            <h2>Experiencing Symptoms?</h2>
-        </section>
-        <footer>(C)2020 Covid Center(R) All rights reserved</footer>
-    </body>
+
+<head>
+    <title>Covid Cenet(R)</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to the Covid Center Website!</h1>
+    </header>
+    <section>
+        <h2>Please go Ahead and fill out the form: </h2>
+        <article>
+            <form>
+                <fieldset>
+                    <legend>Part 1: Patient Information</legend>
+                    <p>
+                        <label for="txtFName">
+                            <span>First Name: </span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <input type="text" id="txtFName" name="txtFName" required>
+                    </p>
+                    <p>
+                        <label for="txtLName">
+                            <span>Last Name: </span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <input type="text" id="txtLName" name="txtLName" required>
+                    </p>
+                    <p>
+                    <fieldset>
+                        <legend>Gender: </legend>
+                        <input type="radio" id="rbMale" name="gender" value="Male">
+                        <label for="rbMale">Male</label>
+
+                        <input type="radio" id="rbFemale" name="gender" value="Female">
+                        <label for="rbFemale">Female</label>
+
+                        <input type="radio" id="rbOther" name="gender" value="Other">
+                        <label for="rbOther">Other</label>
+                    </fieldset>
+                    <p>
+                        <label for="txtTel">Phone Number:</label>
+
+                        <input type="tel" id="txtTel" name="txtTel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    </p>
+                    <p>
+                        <label for="txtEmail">Email: </label>
+                        <strong><abbr title="required to fill out">*</abbr></strong>
+                        <input type="Email" id="txtEmail" name="txtEmail">
+                    </p>
+                    <p>
+                        <label for="txtAddy">Address:
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <input type="text" id="txtAddy" name="txtAddy">
+                    </p>
+                    <p>
+                        <label for="txtDob">
+                            <span>Date of Birth</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <input type="date" id="txtDob" name="txtDob">
+
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Part 2:Potential Symptoms?</legend>
+                    <h3>Please if you have experienced any of the symptoms select yes</h3>
+
+                    <p>
+                        <label for="ddFever">
+                            <span>Fever or Chills</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <select id="ddFever" name="ddFever">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="ddCough">
+                            <span>Cough</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <select id="ddCough" name="ddCough">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="ddShort">
+                            <span>Shortness of breath or difficulty breathing</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <select id="ddShort" name="ddShort">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="ddFat">
+                            <span>Fatigue</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <select id="ddFat" name="ddFat">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="ddMuscle">
+                            <span>Muscle or body aches</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <select id="ddMuscle" name="ddMuscle">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="ddHead">
+                            <span>Headache</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <select id="ddHead" name="ddHead">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="ddSmell">
+                            <span>New Loss of taste or smell</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <select id="ddSmell" name="ddSmell">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="ddThroat">
+                            <span>Sore Throat</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <select id="ddThroat" name="ddThroat">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="ddCong">
+                            <span>Congestion or runny nose</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <select id="ddCong" name="ddCong">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="ddNausea">
+                            <span>Nausea or vomiting</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <select id="ddNausea" name="ddNausea">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="ddd">
+                            <span>Diarrhea</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <select id="ddd" name="ddd">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Part 3: Other Questions</legend>
+                    <p>
+                        <label for="ddcontact">
+                            <span>Have you had contact (within 6 feet for > 15 minutes) with anyone diagnosed with
+                                COVID-19 in the last 14 days and were not wearing proper personal protective
+                                equipement?</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <br>
+                        <select id="ddcontact" name="ddcontact">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="ddDiagnosis">
+                            <span>Have you had diagnosis of COVID-19 in the last 10 days?</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <br>
+                        <select id="ddDiagnosis" name="ddDiagnosis">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="ddCountry">
+                            <span>Have you traveled to any country in the last 14 days?</span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <br>
+                        <select id="ddCountry" name="ddCountry">
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
+                        </select>
+                        <br>
+                    <div>
+                        <label for="txtCountry">
+                            <span>Country Names (separated by comma): </span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <input type="text" id="txtCountry" name="txtCountry" required>
+                    </div>
+                    <p>
+                        <label for="txtTemp">
+                            <span>Current Temperature: </span>
+                            <strong><abbr title="required to fill out">*</abbr></strong>
+                        </label>
+                        <input type="text" id="txtTemp" name="txtTemp" required pattern="[0-9]+(\.[0-9]{1,2})">
+                    </p>
+                </fieldset>
+                <p>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </p>
+            </form>
+        </article>
+        <h2>Experiencing Symptoms?</h2>
+    </section>
+    <footer>(C)2020 Covid Center(R) All rights reserved</footer>
+</body>
+
 </html>
