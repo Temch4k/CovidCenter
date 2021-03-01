@@ -8,6 +8,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
@@ -17,7 +19,7 @@
     <section>
         <h2>Please go Ahead and fill out the form: </h2>
         <article>
-            <form>
+            <form onsubmit = "return validateForm()" id="mainForm" novalidate>
                 <fieldset class="border">
                     <legend class="bg-info w-auto">Part 1: Patient Information</legend>
                     <div class="form-group row">
@@ -112,15 +114,16 @@
                             <span>Date of Birth</span>
                         </label>
                         <div class="col-lg-6">
-                        <input type="date" id="txtDob" name="txtDob" class="form-control" placeholder="Date of Birth"
-                            required>
+                            <input type="date" id="txtDob" name="txtDob" class="form-control"
+                                placeholder="Date of Birth" required>
+                            <div id="divBirthError" class="col-sm-2 col-lg-6 invisible  errorMsg"></div>
                         </div>
 
                     </div>
                 </fieldset>
 
                 <fieldset class="border">
-                        <legend class=" bg-primary w-auto">Part 2: Potential Symptoms?</legend>
+                    <legend class=" bg-primary w-auto">Part 2: Potential Symptoms?</legend>
                     <h3>Please if you have experienced any of the symptoms select yes</h3>
 
                     <div class="row form-group">
@@ -256,11 +259,12 @@
                     </div>
 
                 </fieldset>
-                <fieldset class = "border">
-                    <legend class = "w-auto bg-warning">Part 3: Other Questions</legend>
+                <fieldset class="border">
+                    <legend class="w-auto bg-warning">Part 3: Other Questions</legend>
                     <div class="row form-group">
                         <label for="ddppl" class="col-sm-6">
-                            <span>Have you had contact (within 6 feet for > 15 minutes) with anyone diagnosed with COVID-19 in the last 14 days and were not wearing proper personal protective equipement?
+                            <span>Have you had contact (within 6 feet for > 15 minutes) with anyone diagnosed with
+                                COVID-19 in the last 14 days and were not wearing proper personal protective equipement?
                             </span>
                         </label>
                         <div>
@@ -291,22 +295,23 @@
                             </span>
                         </label>
                         <div>
-                            <select id="ddCountry" name="ddCountry" class="form-control">
+                            <select id="ddCountry" name="ddCountry" class="form-control" onchange="updateCountry()">
                                 <option value="Yes">Yes</option>
                                 <option value="No" selected>No</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <div id="divCountry" class="form-group row invisible">
                         <div class="col-sm-6">
                             <label for="txtcountry">
                                 <span>Country Names (separated by commas): </span>
                             </label>
                         </div>
-                        <div class="col-sm-10">
+                        <div class="col-sm-10 col-lg-6">
                             <input type="text" id="txtcountry" name="txtcountry" required class="form-control"
                                 placeholder="Country1, Country2, Country3, etc...">
+                                <div id="divCountryError" class="col-sm-2 col-lg-6 invisible  errorMsg"></div>
                         </div>
 
                     </div>
@@ -318,7 +323,8 @@
                             </label>
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" id="txtTemp" name="txtTemp" class ="form-control" required pattern="[0-9]+(\.[0-9]{1,2})">
+                            <input type="text" id="txtTemp" name="txtTemp" class="form-control" required
+                                pattern="[0-9]+(\.[0-9]{1,2})">
                         </div>
 
                     </div>
@@ -332,6 +338,8 @@
         <h2>Experiencing Symptoms?</h2>
     </section>
     <footer>(C)2020 Covid Center(R) All rights reserved</footer>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
